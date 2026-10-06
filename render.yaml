@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: real-estate-ai-chatbot
+    runtime: docker
+    plan: free
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    healthCheckPath: /api/live
+    envVars:
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: OPENROUTER_MODEL
+        value: thinkingmachines/inkling:free
+      - key: ENABLE_LIVE_SCRAPE
+        value: "true"
+      - key: LIVE_SCRAPE_USE_PLAYWRIGHT
+        value: "false"
+      - key: CORS_ORIGINS
+        value: http://localhost:5173,http://127.0.0.1:5173
+      - key: CORS_ORIGIN_REGEX
+        value: https://.*\.vercel\.app
+      - key: CHROMA_API_KEY
+        sync: false
+      - key: CHROMA_TENANT
+        value: 7ff33401-8f97-45e9-92ca-060ca2fdb321
+      - key: CHROMA_DATABASE
+        value: real-estate
+      - key: CHROMA_HOST
+        value: api.trychroma.com
+      - key: CHROMA_CLOUD_TIMEOUT_SECONDS
+        value: "2"

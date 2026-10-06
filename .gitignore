@@ -1,0 +1,72 @@
+# Secrets — keep .env.example files tracked
+.env
+.env.local
+.env.production
+.env.*.local
+frontend/.env
+frontend/.env.local
+frontend/.env.production
+frontend/.env.*.local
+*.pem
+*.key
+credentials.json
+
+# Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.tox/
+.cache/
+
+# Hugging Face / sentence-transformers model cache (large, rebuilt on install)
+**/huggingface/
+backend/.cache/
+
+# Node / Vite
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime data — rebuilt from backend/data/seed/properties.json
+backend/data/properties.db
+backend/data/*.db
+backend/data/*.db-journal
+backend/data/*.db-wal
+backend/data/*.db-shm
+backend/data/chroma/
+backend/data/raw/
+backend/data/last_live_scrape.json
+*.sqlite3
+!backend/data/seed/
+!backend/data/seed/**
+
+# Host / IDE / deploy CLI
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+.cursor/
+.vercel/
+.render-buildlogs/
+
+# Logs and OS junk
+*.log
+tmp/
+temp/

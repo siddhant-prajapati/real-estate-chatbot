@@ -1,0 +1,42 @@
+# Git / IDE
+.git
+.gitignore
+.idea
+.vscode
+.cursor
+
+# Secrets
+.env
+.env.local
+*.pem
+*.key
+
+# Local toolchains
+.venv
+venv
+env
+__pycache__
+*.pyc
+*.pyo
+.pytest_cache
+.mypy_cache
+.ruff_cache
+.cache
+huggingface
+**/.cache
+*.log
+
+# Runtime indexes — seed JSON is copied; SQLite/Chroma rebuild on boot
+data/chroma
+data/properties.db
+data/*.db
+data/*.db-journal
+data/*.db-wal
+data/*.db-shm
+data/raw
+data/last_live_scrape.json
+*.sqlite3
+
+# Keep the portable catalog
+!data/seed
+!data/seed/**
